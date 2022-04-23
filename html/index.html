@@ -56,6 +56,16 @@
                 methods: {
                     onSend() {
                         if (this.tweetId && this.tweetId != "") {
+                            if (
+                                this.tweetId[0] == "h" ||
+                                this.tweetId[0] == "w" ||
+                                this.tweetId[0] == "t"
+                            ) {
+                                let splited = this.tweetId.split("/");
+                                this.tweetId = splited[splited.length - 1];
+                                this.tweetId = this.tweetId.split("?")[0];
+                            }
+
                             socket.emit("tweet", this.tweetId);
                         }
                     },
