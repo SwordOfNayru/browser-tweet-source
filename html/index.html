@@ -42,6 +42,14 @@
                 >
                     Clear tweet
                 </button>
+                <br />
+                <button
+                    class="btn btn-outline-success"
+                    type="button"
+                    v-on:click="onClear"
+                >
+                    Clear text box
+                </button>
             </div>
         </div>
         <script>
@@ -71,6 +79,9 @@
                     },
                     onOff() {
                         socket.emit("tweet_off", {});
+                    },
+                    onClear() {
+                        this.tweetId = "";
                     },
                 },
             }).mount("#app");
