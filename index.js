@@ -25,6 +25,7 @@ app.get("/display", (req, res) => {
 app.use("/static", express.static(__dirname + "/public"));
 
 io.on("connection", (socket) => {
+    console.log("a user connected");
     socket.on("tweet", async (msg) => {
         const params = { ids: msg, "tweet.fields": getTweetField() };
         const headers = getHeaders();

@@ -150,6 +150,10 @@
                 },
             }).mount("#app");
 
+            socket.on("connect", () => {
+                console.log("ok display");
+            });
+
             socket.on('tweet', tweet => {
                 vue.receiveTweet(tweet);
             })
@@ -158,6 +162,7 @@
                 vue.off();
             })
 
+            
         </script>
     </body>
 </html>

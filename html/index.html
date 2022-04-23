@@ -64,6 +64,10 @@
                     },
                 },
             }).mount("#app");
+
+            socket.on("connect", () => {
+                console.log("ok admin");
+            });
         </script>
     </body>
 </html>
