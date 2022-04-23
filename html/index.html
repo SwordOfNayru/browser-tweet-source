@@ -14,6 +14,22 @@
         <script src="https://unpkg.com/vue@3"></script>
         <script src="/socket.io/socket.io.js"></script>
         <title>Document</title>
+        <style>
+            body {
+                background-image: none !important;
+                background-color: pink !important;
+                color: black !important;
+            }
+
+            .input-group-text {
+                color: black !important;
+                background-color: #fdb0c3 !important;
+            }
+
+            .form-control {
+                background-color: #fc98b1 !important;
+            }
+        </style>
     </head>
     <body style="min-height: 100vh">
         <div class="container d-flex justify-content-center">
@@ -27,7 +43,7 @@
                     </span>
                     <input type="text" class="form-control" v-model="tweetId" />
                     <button
-                        class="btn btn-outline-success"
+                        class="btn btn-dark"
                         type="button"
                         id="button-addon2"
                         v-on:click="onSend"
@@ -36,19 +52,11 @@
                     </button>
                 </div>
 
-                <button
-                    class="btn btn-outline-success"
-                    type="button"
-                    v-on:click="onOff"
-                >
+                <button class="btn btn-dark" type="button" v-on:click="onOff">
                     Clear tweet
                 </button>
                 <br />
-                <button
-                    class="btn btn-outline-success"
-                    type="button"
-                    v-on:click="onClear"
-                >
+                <button class="btn btn-dark" type="button" v-on:click="onClear">
                     Clear text box
                 </button>
             </div>
