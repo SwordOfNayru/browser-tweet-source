@@ -22,6 +22,10 @@ app.get("/display", (req, res) => {
     res.sendFile(path.join(__dirname, "/html/displayer/index.html"));
 });
 
+app.get("/display/valo", (req, res) => {
+    res.sendFile(path.join(__dirname, "/html/displayer/valo.html"));
+});
+
 app.use("/static", express.static(__dirname + "/public"));
 
 io.on("connection", (socket) => {
